@@ -32,7 +32,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        viewHolder.txtData.setText(postList.get(i).getText());
+        viewHolder.txtTitle.setText(postList.get(i).getTitle());
+        viewHolder.txtText.setText(postList.get(i).getText());
     }
 
     @Override
@@ -42,11 +43,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView txtData;
+        private TextView txtTitle, txtText;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtData = itemView.findViewById(R.id.txtData);
+            txtTitle = itemView.findViewById(R.id.txtTitle);
+            txtText = itemView.findViewById(R.id.txtText);
         }
     }
 }
